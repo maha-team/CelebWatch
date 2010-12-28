@@ -19,6 +19,10 @@ public class Main extends JFrame {
 
 	private Control c;
 	
+	Table t; //csv
+
+	int rows; //csv
+	
 	/**
 	 * Launch the application.
 	 */
@@ -33,12 +37,19 @@ public class Main extends JFrame {
 				}
 			}
 		});
+		
 	}
 
 	/**
 	 * Create the frame.
 	 */
 	public Main() {
+		  t = new Table( "name.csv" );
+		  rows = t.getRowCount(); 
+		  for( int i = 0; i < rows; i++ ) {
+		    System.out.println( t.getRowName(i) );
+		  }
+			  
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -76,5 +87,7 @@ public class Main extends JFrame {
 					.addContainerGap(163, Short.MAX_VALUE))
 		);
 		contentPane.setLayout(gl_contentPane);
+		
+		
 	}
 }

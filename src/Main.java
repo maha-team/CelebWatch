@@ -23,6 +23,7 @@ public class Main extends JFrame {
 
 	int rows; //csv
 	
+		
 	/**
 	 * Launch the application.
 	 */
@@ -35,7 +36,9 @@ public class Main extends JFrame {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
+				
 			}
+			
 		});
 		
 	}
@@ -44,12 +47,31 @@ public class Main extends JFrame {
 	 * Create the frame.
 	 */
 	public Main() {
+		// Create the table (2D array) from our CSV file.
 		  t = new Table( "name.csv" );
 		  rows = t.getRowCount(); 
+		  
+		//print the first column in each row from csv-file.
 		  for( int i = 0; i < rows; i++ ) {
 		    System.out.println( t.getRowName(i) );
 		  }
+		  
+		// print the second column in csv-file
+		// System.out.println( t.getInt( "ABBA", 0 ) );
+		 
+		  
+		  
+		 /* Hämtar kolumn 2 (Category) från rad numret som heter "ABBA" */
+		 System.out.println(t.getString(t.getRowIndex("ABBA"), 1));
+		 
+		 
+
+		 /* Hämtar kolumn 3 (Id1) från raden som heter "The Hives" */
+		 System.out.println(t.getString("The Hives", 2));
+
 			  
+		
+		  
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -90,4 +112,6 @@ public class Main extends JFrame {
 		
 		
 	}
+
+	
 }

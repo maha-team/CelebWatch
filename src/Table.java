@@ -3,10 +3,14 @@ import processing.core.*;
 
 
 public class Table extends PApplet{
-	  int rowCount;
-	  String[][] data;
-	  
-
+	
+	String[][] data; 
+	
+	int rowCount;
+	
+	int _idColumn = 1;
+	 
+	
 	  Table(String filename) {
 	    String[] rows = loadStrings(filename);
 	    data = new String[rows.length][];
@@ -23,16 +27,15 @@ public class Table extends PApplet{
 	      String[] pieces = split(rows[i], ';');
 	      // copy to the table array
 	      data[rowCount] = pieces;
-	      rowCount++;
-
-	      // this could be done in one fell swoop via:
-	      //data[rowCount++] = split(rows[i], TAB);
+	      rowCount++;  
+	      
 	    }
+	    
 	    // resize the 'data' array as necessary
 	    data = (String[][]) subset(data, 0, rowCount);
 	  }
 
-
+	 
 	  int getRowCount() {
 	    return rowCount;
 	  }
@@ -122,5 +125,8 @@ public class Table extends PApplet{
 	    int rowIndex = getRowIndex(rowName);
 	    data[rowIndex][column] = str(what);
 	  }  
+	  
+	}
 
-}
+	 
+

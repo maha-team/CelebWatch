@@ -8,6 +8,10 @@ public class Celebrity implements StatusListener {
 
 	/* Twitter4j */
 
+	public Celebrity(String string) {
+		// TODO Auto-generated constructor stub
+	}
+
 	@Override
 	public void onDeletionNotice(StatusDeletionNotice arg0) {
 		// TODO Auto-generated method stub
@@ -32,4 +36,12 @@ public class Celebrity implements StatusListener {
 		// TODO Auto-generated method stub
 
 	}
+	
+	java.util.ArrayList<Celebrity> list = new java.util.ArrayList<Celebrity>();
+	
+	Celebrity c1 = new Celebrity("Celebrity1");
+	Celebrity c2 = new Celebrity("Celebrity2");
+	
+
+	
 }

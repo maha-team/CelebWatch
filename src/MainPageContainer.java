@@ -18,6 +18,9 @@ import com.jgoodies.forms.layout.ColumnSpec;
 import com.jgoodies.forms.layout.RowSpec;
 import com.jgoodies.forms.factories.FormFactory;
 import java.awt.GridLayout;
+import javax.swing.JScrollPane;
+import javax.swing.ScrollPaneConstants;
+import java.awt.ComponentOrientation;
 
 
 public class MainPageContainer extends JFrame {
@@ -30,8 +33,9 @@ public class MainPageContainer extends JFrame {
 	private int PressedButton = 0;
 	private JPanel sidepanel1;
 	private JLabel image;
-	private JLabel label;
+	private JLabel lblText;
 	private Table t;
+	private JScrollPane scrollPane;
 
 	public void ButtonPressed(){
 				  
@@ -53,10 +57,9 @@ public class MainPageContainer extends JFrame {
 			 */
 			for( int i = 0; i < t.getRowCount(); i++ ) {
 				int y = 0;
-				//System.out.println("cat: " + t.getRowCat(i));
 			    if (t.getRowCat(i).compareTo("Entertainment") == 0) {
 			    	String bild = "/images/"+t.getImageName(i);
-			    	JLabel lblImage = new JLabel("Image");
+			    	JLabel lblImage = new JLabel(t.getRowName(i));
 					lblImage.setIcon(new ImageIcon(MainPageContainer.class.getResource(bild)));
 					sidepanel1.add(lblImage);
 			    }
@@ -76,10 +79,9 @@ public class MainPageContainer extends JFrame {
 			 */
 			for( int i = 0; i < t.getRowCount(); i++ ) {
 				int y = 0;
-				//System.out.println("cat: " + t.getRowCat(i));
 			    if (t.getRowCat(i).compareTo("Politics") == 0) {
 			    	String bild = "/images/"+t.getImageName(i);
-			    	JLabel lblImage = new JLabel("Image");
+			    	JLabel lblImage = new JLabel(t.getRowName(i));
 					lblImage.setIcon(new ImageIcon(MainPageContainer.class.getResource(bild)));
 					sidepanel1.add(lblImage);
 			    }
@@ -100,10 +102,9 @@ public class MainPageContainer extends JFrame {
 			 */
 			for( int i = 0; i < t.getRowCount(); i++ ) {
 				int y = 0;
-				//System.out.println("cat: " + t.getRowCat(i));
 			    if (t.getRowCat(i).compareTo("Sports") == 0) {
 			    	String bild = "/images/"+t.getImageName(i);
-			    	JLabel lblImage = new JLabel("Image");
+			    	JLabel lblImage = new JLabel(t.getRowName(i));
 					lblImage.setIcon(new ImageIcon(MainPageContainer.class.getResource(bild)));
 					sidepanel1.add(lblImage);
 			    }
@@ -122,23 +123,36 @@ public class MainPageContainer extends JFrame {
 		setTitle("CelebWatch Main Page");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 680, 572);
+		
 		contentPane = new JPanel();
+		contentPane.setBackground(Color.WHITE);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		setResizable(false);
 		contentPane.setLayout(null);
 		
+		scrollPane = new JScrollPane();
+		scrollPane.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
+		scrollPane.setBorder(null);
+		scrollPane.setForeground(Color.WHITE);
+		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+		scrollPane.setBounds(442, 65, 220, 470);
+		contentPane.add(scrollPane);
+		
 		sidepanel1 = new JPanel();
+		sidepanel1.setFont(new Font("Arial", Font.BOLD, 12));
+		sidepanel1.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
+		sidepanel1.setBorder(null);
+		scrollPane.setViewportView(sidepanel1);
 		sidepanel1.setBackground(Color.WHITE);
 		sidepanel1.setForeground(Color.WHITE);
-		sidepanel1.setBounds(440, 65, 220, 460);
-		contentPane.add(sidepanel1);
-		sidepanel1.setLayout(new GridLayout(10, 2, 5, 5));
+		sidepanel1.setLayout(new GridLayout(0, 1, 5, 5));
 		
-		label = new JLabel("image");
-		label.setFont(new Font("Arial", Font.BOLD, 12));
-		label.setForeground(Color.BLACK);
-		sidepanel1.add(label);
+		lblText = new JLabel("text");
+		lblText.setBackground(Color.WHITE);
+		lblText.setFont(new Font("Arial", Font.BOLD, 12));
+		lblText.setForeground(Color.WHITE);
+		sidepanel1.add(lblText);
 		
 		/*/
 		 * Entertainment button
@@ -225,7 +239,7 @@ public class MainPageContainer extends JFrame {
 		contentPane.add(bodyImage);
 		
 		/*/
-		 * MainWindow container
+		 * MainWindow layout
 		 */
 		JLabel MainCelebwatch = new JLabel("");
 		MainCelebwatch.setForeground(Color.WHITE);

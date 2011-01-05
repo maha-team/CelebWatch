@@ -52,14 +52,22 @@ public class Table extends PApplet{
 	    return -1;
 	  }
 
-
 	  String getRowName(int row) {
 	    return getString(row, 0);
 	  }
+	  
+
+	  String getRowCat(int row) {
+	    return getString(row, 1);
+	  }
+	  
+	  String getImageName(int row) {
+		    return getString(row, 5);
+		  }
 
 
 	  String getString(int rowIndex, int column) {
-	    System.out.println("row Index:" + rowIndex + " column:" + column);
+	    //System.out.println("row Index:" + rowIndex + " column:" + column+ "value: " + data[rowIndex][column]);
 	    return data[rowIndex][column];
 	  }
 

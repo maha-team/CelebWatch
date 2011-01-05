@@ -32,6 +32,7 @@ public class MainPageContainer extends JFrame {
 	private JLabel image;
 	private JLabel label;
 	private Table t;
+	private Control c;
 
 	public void ButtonPressed(){
 				  
@@ -56,7 +57,8 @@ public class MainPageContainer extends JFrame {
 				//System.out.println("cat: " + t.getRowCat(i));
 			    if (t.getRowCat(i).compareTo("Entertainment") == 0) {
 			    	String bild = "/images/"+t.getImageName(i);
-			    	JLabel lblImage = new JLabel("Image");
+			    	MyLabel lblImage = new MyLabel("Image");
+			    	lblImage.setBild(bild);
 					lblImage.setIcon(new ImageIcon(MainPageContainer.class.getResource(bild)));
 					sidepanel1.add(lblImage);
 			    }

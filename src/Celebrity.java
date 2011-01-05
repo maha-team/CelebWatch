@@ -41,6 +41,7 @@ public class Celebrity implements StatusListener {
 	
 	Celebrity c1 = new Celebrity("Celebrity1");
 	Celebrity c2 = new Celebrity("Celebrity2");
+	// ?
 	
 
 	

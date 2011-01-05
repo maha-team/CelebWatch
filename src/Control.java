@@ -2,7 +2,7 @@ import twitter4j.*;
 
 	public class Control implements StatusListener {
 
-	 
+String[] filter;	 
 
 	      /**Call this method to strt reading tweets*/
 
@@ -84,7 +84,8 @@ import twitter4j.*;
 
 	            boolean found = false;
 
-	            if (_tweet.contains("and")){
+	            for( int i = 0; i < filter.length; i++)
+	            if (_tweet.contains(filter[i])){
 
 	                  found = true;
 

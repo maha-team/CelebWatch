@@ -4,6 +4,7 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -11,12 +12,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JScrollBar;
-import javax.swing.SpringLayout;
-import com.jgoodies.forms.layout.FormLayout;
-import com.jgoodies.forms.layout.ColumnSpec;
-import com.jgoodies.forms.layout.RowSpec;
-import com.jgoodies.forms.factories.FormFactory;
 import java.awt.GridLayout;
 import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
@@ -31,8 +26,13 @@ public class MainPageContainer extends JFrame {
 	JButton Politics;
 	JButton Sports;
 	private int PressedButton = 0;
+	/**
+	 * 
+	 */
 	private JPanel sidepanel1;
+	@SuppressWarnings("unused")
 	private JLabel image;
+	@SuppressWarnings("unused")
 	private JLabel lblText;
 	private Table t;
 	private JScrollPane scrollPane;
@@ -45,7 +45,7 @@ public class MainPageContainer extends JFrame {
 		sidepanel1.removeAll();
 		
 		/*/
-		 *Entertainment button pressed
+		 *Entertainment button pressed and changes to gray
 		 */
 		if (PressedButton == 0) {
 			Entertainment.setIcon(new ImageIcon(MainPageContainer.class.getResource("/images/entertainmentbuttonpressed.png")));
@@ -56,18 +56,17 @@ public class MainPageContainer extends JFrame {
 			 * reads the csv file and imports the images into the sidepanel1
 			 */
 			for( int i = 0; i < t.getRowCount(); i++ ) {
-				int y = 0;
 			    if (t.getRowCat(i).compareTo("Entertainment") == 0) {
-			    	String bild = "/images/"+t.getImageName(i);
-			    	JLabel lblImage = new JLabel(t.getRowName(i));
-					lblImage.setIcon(new ImageIcon(MainPageContainer.class.getResource(bild)));
-					sidepanel1.add(lblImage);
+			    	String celebIcon = "/images/" + t.getImageName(i);
+			    	JLabel celeb = new JLabel(t.getRowName(i));
+			    	celeb.setIcon(new ImageIcon(MainPageContainer.class.getResource(celebIcon)));
+					sidepanel1.add(celeb);
 			    }
 			}	
-			}
+		}
 		
 		/*/
-		 *Politics button pressed
+		 *Politics button pressed and changes to gray
 		 */
 		if (PressedButton == 1) { 
 			Entertainment.setIcon(new ImageIcon(MainPageContainer.class.getResource("/images/entertainmentbutton.png")));
@@ -78,19 +77,18 @@ public class MainPageContainer extends JFrame {
 			 * reads the csv file and imports the images into the sidepanel1
 			 */
 			for( int i = 0; i < t.getRowCount(); i++ ) {
-				int y = 0;
 			    if (t.getRowCat(i).compareTo("Politics") == 0) {
-			    	String bild = "/images/"+t.getImageName(i);
-			    	JLabel lblImage = new JLabel(t.getRowName(i));
-					lblImage.setIcon(new ImageIcon(MainPageContainer.class.getResource(bild)));
-					sidepanel1.add(lblImage);
+			    	String celebIcon = "/images/"+t.getImageName(i);
+			    	JLabel celeb = new JLabel(t.getRowName(i));
+			    	celeb.setIcon(new ImageIcon(MainPageContainer.class.getResource(celebIcon)));
+					sidepanel1.add(celeb);
 			    }
 			    	
 			}
 		}
 		
 		/*/
-		 *Sports button pressed
+		 *Sports button pressed and changes to gray
 		 */
 		if (PressedButton == 2) { 
 			Entertainment.setIcon(new ImageIcon(MainPageContainer.class.getResource("/images/entertainmentbutton.png")));
@@ -101,12 +99,11 @@ public class MainPageContainer extends JFrame {
 			 * reads the csv file and imports the images into the sidepanel1
 			 */
 			for( int i = 0; i < t.getRowCount(); i++ ) {
-				int y = 0;
 			    if (t.getRowCat(i).compareTo("Sports") == 0) {
-			    	String bild = "/images/"+t.getImageName(i);
-			    	JLabel lblImage = new JLabel(t.getRowName(i));
-					lblImage.setIcon(new ImageIcon(MainPageContainer.class.getResource(bild)));
-					sidepanel1.add(lblImage);
+			    	String celebIcon = "/images/"+t.getImageName(i);
+			    	JLabel celeb = new JLabel(t.getRowName(i));
+			    	celeb.setIcon(new ImageIcon(MainPageContainer.class.getResource(celebIcon)));
+					sidepanel1.add(celeb);
 			    }
 			    	
 			}
@@ -117,8 +114,10 @@ public class MainPageContainer extends JFrame {
 	 * Create the frame.
 	 */
 	public MainPageContainer() {
-		
-		 t = new Table("name.csv");
+		/*/
+		 * reads the file name.csv
+		 */
+		t = new Table("name.csv");
 		
 		setTitle("CelebWatch Main Page");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -132,11 +131,12 @@ public class MainPageContainer extends JFrame {
 		contentPane.setLayout(null);
 		
 		scrollPane = new JScrollPane();
+		scrollPane.setFont(new Font("Arial", Font.BOLD, 12));
 		scrollPane.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
 		scrollPane.setBorder(null);
 		scrollPane.setForeground(Color.WHITE);
 		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-		scrollPane.setBounds(442, 65, 220, 470);
+		scrollPane.setBounds(442, 65, 230, 470);
 		contentPane.add(scrollPane);
 		
 		sidepanel1 = new JPanel();
@@ -147,12 +147,6 @@ public class MainPageContainer extends JFrame {
 		sidepanel1.setBackground(Color.WHITE);
 		sidepanel1.setForeground(Color.WHITE);
 		sidepanel1.setLayout(new GridLayout(0, 1, 5, 5));
-		
-		lblText = new JLabel("text");
-		lblText.setBackground(Color.WHITE);
-		lblText.setFont(new Font("Arial", Font.BOLD, 12));
-		lblText.setForeground(Color.WHITE);
-		sidepanel1.add(lblText);
 		
 		/*/
 		 * Entertainment button

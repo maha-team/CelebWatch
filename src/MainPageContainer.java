@@ -4,7 +4,6 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -16,6 +15,10 @@ import java.awt.GridLayout;
 import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
 import java.awt.ComponentOrientation;
+import java.awt.GridBagLayout;
+import javax.swing.border.TitledBorder;
+import javax.swing.border.CompoundBorder;
+import javax.swing.border.BevelBorder;
 
 
 public class MainPageContainer extends JFrame {
@@ -26,16 +29,12 @@ public class MainPageContainer extends JFrame {
 	JButton Politics;
 	JButton Sports;
 	private int PressedButton = 0;
-	/**
-	 * 
-	 */
 	private JPanel sidepanel1;
-	@SuppressWarnings("unused")
-	private JLabel image;
-	@SuppressWarnings("unused")
-	private JLabel lblText;
 	private Table t;
-	private JScrollPane scrollPane;
+	private JScrollPane sideScrollPanel;
+	private JPanel tweetPanel;
+	private JScrollPane tweetScrollPane;
+	private JPanel celebInfoPanel;
 
 	public void ButtonPressed(){
 				  
@@ -57,10 +56,12 @@ public class MainPageContainer extends JFrame {
 			 */
 			for( int i = 0; i < t.getRowCount(); i++ ) {
 			    if (t.getRowCat(i).compareTo("Entertainment") == 0) {
-			    	String celebIcon = "/images/" + t.getImageName(i);
-			    	JLabel celeb = new JLabel(t.getRowName(i));
-			    	celeb.setIcon(new ImageIcon(MainPageContainer.class.getResource(celebIcon)));
-					sidepanel1.add(celeb);
+			    	String celebIcon = "/images/" + t.getIconName(i);
+			    	MyLabel celeb = new MyLabel(t.getRowName(i));	
+			    	celeb.setIndex(i);
+			    	celeb.setMPC(this);
+			    		celeb.setIcon(new ImageIcon(MainPageContainer.class.getResource(celebIcon)));
+			    		sidepanel1.add(celeb);
 			    }
 			}	
 		}
@@ -78,10 +79,13 @@ public class MainPageContainer extends JFrame {
 			 */
 			for( int i = 0; i < t.getRowCount(); i++ ) {
 			    if (t.getRowCat(i).compareTo("Politics") == 0) {
-			    	String celebIcon = "/images/"+t.getImageName(i);
-			    	JLabel celeb = new JLabel(t.getRowName(i));
-			    	celeb.setIcon(new ImageIcon(MainPageContainer.class.getResource(celebIcon)));
-					sidepanel1.add(celeb);
+			    	String celebIcon = "/images/"+ t.getIconName(i);
+			    	MyLabel celeb = new MyLabel(t.getRowName(i));	
+			    	celeb.setIndex(i);
+			    	celeb.setMPC(this);
+			    		celeb.setIcon(new ImageIcon(MainPageContainer.class.getResource(celebIcon)));
+			    		sidepanel1.add(celeb);
+
 			    }
 			    	
 			}
@@ -100,10 +104,12 @@ public class MainPageContainer extends JFrame {
 			 */
 			for( int i = 0; i < t.getRowCount(); i++ ) {
 			    if (t.getRowCat(i).compareTo("Sports") == 0) {
-			    	String celebIcon = "/images/"+t.getImageName(i);
-			    	JLabel celeb = new JLabel(t.getRowName(i));
-			    	celeb.setIcon(new ImageIcon(MainPageContainer.class.getResource(celebIcon)));
-					sidepanel1.add(celeb);
+			    	String celebIcon = "/images/"+ t.getIconName(i);
+			    	MyLabel celeb = new MyLabel(t.getRowName(i));	
+			    	celeb.setIndex(i);
+			    	celeb.setMPC(this);
+			    		celeb.setIcon(new ImageIcon(MainPageContainer.class.getResource(celebIcon)));
+			    		sidepanel1.add(celeb);
 			    }
 			    	
 			}
@@ -130,23 +136,45 @@ public class MainPageContainer extends JFrame {
 		setResizable(false);
 		contentPane.setLayout(null);
 		
-		scrollPane = new JScrollPane();
-		scrollPane.setFont(new Font("Arial", Font.BOLD, 12));
-		scrollPane.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
-		scrollPane.setBorder(null);
-		scrollPane.setForeground(Color.WHITE);
-		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-		scrollPane.setBounds(442, 65, 230, 470);
-		contentPane.add(scrollPane);
+		sideScrollPanel = new JScrollPane();
+		sideScrollPanel.setFont(new Font("Arial", Font.BOLD, 12));
+		sideScrollPanel.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
+		sideScrollPanel.setBorder(null);
+		sideScrollPanel.setForeground(Color.WHITE);
+		sideScrollPanel.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+		sideScrollPanel.setBounds(442, 65, 230, 470);
+		contentPane.add(sideScrollPanel);
 		
 		sidepanel1 = new JPanel();
 		sidepanel1.setFont(new Font("Arial", Font.BOLD, 12));
 		sidepanel1.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
 		sidepanel1.setBorder(null);
-		scrollPane.setViewportView(sidepanel1);
+		sideScrollPanel.setViewportView(sidepanel1);
 		sidepanel1.setBackground(Color.WHITE);
 		sidepanel1.setForeground(Color.WHITE);
 		sidepanel1.setLayout(new GridLayout(0, 1, 5, 5));
+		
+		celebInfoPanel = new JPanel();
+		celebInfoPanel.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
+		celebInfoPanel.setBackground(Color.WHITE);
+		celebInfoPanel.setForeground(Color.WHITE);
+		celebInfoPanel.setBounds(10, 65, 400, 110);
+		contentPane.add(celebInfoPanel);
+		celebInfoPanel.setLayout(new GridLayout(1, 0, 0, 0));
+		
+		tweetScrollPane = new JScrollPane();
+		tweetScrollPane.setFont(new Font("Arial", Font.BOLD, 12));
+		tweetScrollPane.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
+		tweetScrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+		tweetScrollPane.setBounds(10, 185, 400, 350);
+		contentPane.add(tweetScrollPane);
+		
+		tweetPanel = new JPanel();
+		tweetPanel.setForeground(Color.WHITE);
+		tweetPanel.setFont(new Font("Arial", Font.BOLD, 12));
+		tweetPanel.setBackground(Color.WHITE);
+		tweetScrollPane.setViewportView(tweetPanel);
+		tweetPanel.setLayout(new GridLayout(0, 1, 10, 10));
 		
 		/*/
 		 * Entertainment button
@@ -160,7 +188,6 @@ public class MainPageContainer extends JFrame {
 				dispose();
 			}
 		});
-		
 		Entertainment.setIcon(new ImageIcon(MainPageContainer.class.getResource("/images/entertainmentbutton.png")));
 		Entertainment.setPreferredSize(new Dimension(107, 36));
 		Entertainment.setName("Entertainment");
@@ -227,24 +254,30 @@ public class MainPageContainer extends JFrame {
 		Sports.setBounds(230, 10, 110, 40);
 		contentPane.add(Sports);
 		
-		
-		JLabel bodyImage = new JLabel("New label");
-		bodyImage.setBounds(25, 73, 101, 99);
-		contentPane.add(bodyImage);
-		
 		/*/
 		 * MainWindow layout
 		 */
 		JLabel MainCelebwatch = new JLabel("");
+		MainCelebwatch.setBounds(0, 0, 680, 550);
+		contentPane.add(MainCelebwatch);
 		MainCelebwatch.setForeground(Color.WHITE);
 		MainCelebwatch.setFont(new Font("Arial", Font.BOLD, 12));
 		MainCelebwatch.setIcon(new ImageIcon(MainPageContainer.class.getResource("/images/bakgrund.jpg")));
 		MainCelebwatch.setHorizontalAlignment(SwingConstants.CENTER);
-		MainCelebwatch.setBounds(0, 0, 680, 550);
-		contentPane.add(MainCelebwatch);
-
 	}
 
+	public void showTable (int rowIndex){
+		celebInfoPanel.removeAll();
+		t.getImageName(rowIndex);
+		t.getRowName(rowIndex);
+	    String celebImage = "/images/"+ t.getImageName(rowIndex);
+	    JLabel celeb = new JLabel(t.getRowName(rowIndex));	
+	    celeb.setIcon(new ImageIcon(MainPageContainer.class.getResource(celebImage)));
+	    celebInfoPanel.add(celeb);
+	    celebInfoPanel.revalidate();
+	    
+	}
+	
 	public void setPressedButton(int pressedButton) {
 		PressedButton = pressedButton;
 		ButtonPressed();

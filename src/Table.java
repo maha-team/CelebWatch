@@ -5,12 +5,9 @@ import processing.core.*;
 public class Table extends PApplet{
 	
 	String[][] data; 
-	
 	int rowCount;
-	
 	int _idColumn = 1;
-	 
-	
+	 	
 	  Table(String filename) {
 	    String[] rows = loadStrings(filename);
 	    data = new String[rows.length][];
@@ -34,12 +31,10 @@ public class Table extends PApplet{
 	    // resize the 'data' array as necessary
 	    data = (String[][]) subset(data, 0, rowCount);
 	  }
-
 	 
 	  int getRowCount() {
 	    return rowCount;
 	  }
-
 
 	  // find a row by its name, returns -1 if no row found
 	  int getRowIndex(String name) {
@@ -61,16 +56,17 @@ public class Table extends PApplet{
 	    return getString(row, 1);
 	  }
 	  
-	  String getImageName(int row) {
+	  String getIconName(int row) {
 		    return getString(row, 5);
 		  }
-
+	  
+	  String getImageName(int row) {
+		    return getString(row, 6);
+		  }
 
 	  String getString(int rowIndex, int column) {
-	    //System.out.println("row Index:" + rowIndex + " column:" + column+ "value: " + data[rowIndex][column]);
 	    return data[rowIndex][column];
 	  }
-
 
 	  String getString(String rowName, int column) {
 	    return getString(getRowIndex(rowName), column);

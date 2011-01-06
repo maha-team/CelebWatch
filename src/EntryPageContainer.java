@@ -69,7 +69,7 @@ public class EntryPageContainer extends JFrame {
 		Entertainment.setForeground(Color.WHITE);
 		Entertainment.setBackground(Color.WHITE);
 		Entertainment.setFont(new Font("Arial", Font.BOLD, 12));
-		Entertainment.setBounds(250, 280, 110, 40);
+		Entertainment.setBounds(250, 280, 112, 40);
 		contentPane.add(Entertainment);
 		
 		final JButton Politics = new JButton("");

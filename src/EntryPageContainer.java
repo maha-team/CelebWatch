@@ -22,6 +22,7 @@ public class EntryPageContainer extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private static JFrame m_StartFrame = null;
+	private Control _c;
 
 	/**
 	 * Create the frame.

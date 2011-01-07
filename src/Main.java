@@ -18,7 +18,7 @@ public class Main extends JFrame {
 	}
 
 	private JPanel contentPane;
-	private Control c;
+	//private Control c;
 	Table t; //csv
 	int rows; //csv
 	
@@ -63,7 +63,8 @@ public class Main extends JFrame {
 		 
 		 /* Hämtar kolumn 3 (Id1) från raden som heter "The Hives" */
 		 //System.out.println(t.getString("The Hives", 2));
-
+		 // c = new Control();
+		 // c.readTweets();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 	}

@@ -2,7 +2,9 @@ import twitter4j.*;
 
 	public class Control implements StatusListener {
 
-String[] filter;	 
+String[] stringsToLookFor;	 
+private String _findText;
+
 
 	      /**Call this method to strt reading tweets*/
 
@@ -10,7 +12,7 @@ String[] filter;
 
 	            /* Create the TweetStream reader thread */
 
-	            TwitterStream mTwitterStream = new TwitterStreamFactory(this).getInstance("TwitterUsername","TwitterPassword");
+	            TwitterStream mTwitterStream = new TwitterStreamFactory(this).getInstance("mahateam","mahateam1");
 
 	            /* Start reading the Twitter Stream */
 
@@ -51,16 +53,15 @@ String[] filter;
 	            // TODO Auto-generated method stub
 
 	            String tweet = arg0.getText();
-
-	            String userName = arg0.getUser().getName();
-
-	            if (checkTweet(tweet)){
-
-	                  System.out.println(tweet);
-
-	                  //Here or in a special method in this class the logic for saving displaying result is called*/
-
-	            }
+	            //System.out.println(tweet);
+	            String userName = arg0.getUser().getName();	
+		            if (checkTweet(tweet)){
+	
+		                  System.out.println(tweet);
+	
+		                  //Here or in a special method in this class the logic for saving displaying result is called*/
+	
+		            }
 
 	      }
 
@@ -83,18 +84,36 @@ String[] filter;
 	      private boolean checkTweet(String _tweet){
 
 	            boolean found = false;
-
-	            for( int i = 0; i < filter.length; i++)
-	            if (_tweet.contains(filter[i])){
-
-	                  found = true;
-
+	            System.out.println("lookingFor; "+_findText);
+	            if (_findText!=null){
+		            if (_tweet.contains(_findText)){
+		            	System.out.println("found; "+_tweet);
+		            	found=true;
+		            }
 	            }
+	            
+	        /*    for( int i = 1; i < rows.length; i++)
+	                if (_tweet.contains(rows[i][2]))
+	                if (_tweet.contains(rows[i][3]))
+	                if (_tweet.contains(rows[i][4])){
+	                	found = true;
+	                	}
+  */
+	                return found;
+	              
 
-	            return found;
+	          }
 
-	      }
+		public void setFind(String find) {
+			this._findText = find;
+		}
 
-	     
-
+		public String getFind() {
+			return _findText;
+		}
+	      
 	}
+
+	         
+
+

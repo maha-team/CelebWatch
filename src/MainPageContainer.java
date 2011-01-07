@@ -35,9 +35,12 @@ public class MainPageContainer extends JFrame {
 	private JPanel tweetPanel;
 	private JScrollPane tweetScrollPane;
 	private JPanel celebInfoPanel;
+	private Control c;
 
 	public void ButtonPressed(){
 				  
+		 c = new Control();
+		 c.readTweets();
 		/*/
 		 * clears all info from sidepanel1
 		 */
@@ -80,7 +83,8 @@ public class MainPageContainer extends JFrame {
 			for( int i = 0; i < t.getRowCount(); i++ ) {
 			    if (t.getRowCat(i).compareTo("Politics") == 0) {
 			    	String celebIcon = "/images/"+ t.getIconName(i);
-			    	MyLabel celeb = new MyLabel(t.getRowName(i));	
+			    	MyLabel celeb = new MyLabel(t.getRowName(i));
+			    	//System.out.println(celeb);
 			    	celeb.setIndex(i);
 			    	celeb.setMPC(this);
 			    		celeb.setIcon(new ImageIcon(MainPageContainer.class.getResource(celebIcon)));
@@ -271,7 +275,11 @@ public class MainPageContainer extends JFrame {
 		t.getImageName(rowIndex);
 		t.getRowName(rowIndex);
 	    String celebImage = "/images/"+ t.getImageName(rowIndex);
-	    JLabel celeb = new JLabel(t.getRowName(rowIndex));	
+	    JLabel celeb = new JLabel(t.getRowName(rowIndex));
+	  System.out.println("+++++++++: "+celeb.getText());
+	  c.setFind(celeb.getText());
+	  //read array of names
+	  
 	    celeb.setIcon(new ImageIcon(MainPageContainer.class.getResource(celebImage)));
 	    celebInfoPanel.add(celeb);
 	    celebInfoPanel.revalidate();

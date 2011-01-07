@@ -51,6 +51,9 @@ public class Table extends PApplet{
 	    return getString(row, 0);
 	  }
 	  
+	  String[] getSelebNames(String selebPreferedName){
+		  return new String[10];
+	  }
 
 	  String getRowCat(int row) {
 	    return getString(row, 1);

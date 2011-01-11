@@ -16,9 +16,12 @@ import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
 import java.awt.ComponentOrientation;
 import java.awt.GridBagLayout;
+
+import javax.swing.border.EtchedBorder;
 import javax.swing.border.TitledBorder;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.BevelBorder;
+import javax.swing.JTextArea;
 
 
 public class MainPageContainer extends JFrame {
@@ -32,14 +35,15 @@ public class MainPageContainer extends JFrame {
 	private JPanel sidepanel1;
 	private Table t;
 	private JScrollPane sideScrollPanel;
-	private JPanel tweetPanel;
-	private JScrollPane tweetScrollPane;
 	private JPanel celebInfoPanel;
 	private Control c;
+	private JTextArea textArea;
+	private JScrollPane TweetScrollPane;
+	JTextArea tweetStream;
 
 	public void ButtonPressed(){
 				  
-		 c = new Control();
+		 c = new Control(this);
 		 c.readTweets();
 		/*/
 		 * clears all info from sidepanel1
@@ -166,19 +170,19 @@ public class MainPageContainer extends JFrame {
 		contentPane.add(celebInfoPanel);
 		celebInfoPanel.setLayout(new GridLayout(1, 0, 0, 0));
 		
-		tweetScrollPane = new JScrollPane();
-		tweetScrollPane.setFont(new Font("Arial", Font.BOLD, 12));
-		tweetScrollPane.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
-		tweetScrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
-		tweetScrollPane.setBounds(10, 185, 400, 350);
-		contentPane.add(tweetScrollPane);
+		TweetScrollPane = new JScrollPane();
+		TweetScrollPane.setBounds(10, 180, 400, 352);
+		contentPane.add(TweetScrollPane);
+				
+		tweetStream = new JTextArea();
+		TweetScrollPane.setViewportView(tweetStream);
 		
-		tweetPanel = new JPanel();
-		tweetPanel.setForeground(Color.WHITE);
-		tweetPanel.setFont(new Font("Arial", Font.BOLD, 12));
-		tweetPanel.setBackground(Color.WHITE);
-		tweetScrollPane.setViewportView(tweetPanel);
-		tweetPanel.setLayout(new GridLayout(0, 1, 10, 10));
+		tweetStream.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
+		tweetStream.setEditable(false);
+		tweetStream.setLineWrap(true);
+		tweetStream.setFont(new Font("Arial", Font.BOLD, 12));
+		tweetStream.setBackground(Color.WHITE);
+
 		
 		/*/
 		 * Entertainment button
@@ -192,6 +196,7 @@ public class MainPageContainer extends JFrame {
 				dispose();
 			}
 		});
+				
 		Entertainment.setIcon(new ImageIcon(MainPageContainer.class.getResource("/images/entertainmentbutton.png")));
 		Entertainment.setPreferredSize(new Dimension(107, 36));
 		Entertainment.setName("Entertainment");
@@ -269,25 +274,32 @@ public class MainPageContainer extends JFrame {
 		MainCelebwatch.setIcon(new ImageIcon(MainPageContainer.class.getResource("/images/bakgrund.jpg")));
 		MainCelebwatch.setHorizontalAlignment(SwingConstants.CENTER);
 	}
-
+		
 	public void showTable (int rowIndex){
 		celebInfoPanel.removeAll();
 		t.getImageName(rowIndex);
 		t.getRowName(rowIndex);
 	    String celebImage = "/images/"+ t.getImageName(rowIndex);
-	    JLabel celeb = new JLabel(t.getRowName(rowIndex));
-	  System.out.println("+++++++++: "+celeb.getText());
-	  c.setFind(celeb.getText());
+	    	JLabel celeb = new JLabel(t.getRowName(rowIndex));
+	    	System.out.println("+++++++++: "+celeb.getText());
+	    	ShowTweet(celeb.getText());
+	    	c.setFind(celeb.getText());
+	    	
 	  //read array of names
-	  
 	    celeb.setIcon(new ImageIcon(MainPageContainer.class.getResource(celebImage)));
 	    celebInfoPanel.add(celeb);
-	    celebInfoPanel.revalidate();
-	    
+	    celebInfoPanel.revalidate(); 
 	}
 	
 	public void setPressedButton(int pressedButton) {
 		PressedButton = pressedButton;
 		ButtonPressed();
 	}
+
+
+	public void ShowTweet(String tweet) {
+		tweetStream.append(tweet);
+		
+	}
+	
 }

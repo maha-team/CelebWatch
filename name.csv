@@ -1,1 +1,22 @@
-Name;Category;Id1;Id2;Id3;Id4;id5;The Hives;Entertainment;The Hives;The Hives;the hives;thehivesicon.jpg;thehives.jpgStellan SkarsgÔrd;Entertainment;Stellan SkarsgÔrd;Stellan Skarsgard;stellan skarsgard;stellanskarsgardicon.jpg;stellanskarsgard.jpgAlexander SkarsgÔrd;Entertainment;Alexander SkarsgÔrd;Alexander Skarsgard;alexander skarsgard;alexanderskarsgardicon.jpg;alexanderskarsgard.jpgNoomi Rapace;Entertainment;Noomi Rapace;Noomi Rapace;noomi rapace;noomirapaceicon.jpg;noomirapace.jpgABBA;Entertainment;Abba;ABBA;abba;abbaicon.jpg;abba.jpgMalin Åkerman;Entertainment;Malin Åkerman;Malin Akerman;malin akerman;malinakermanicon.jpg;malinakerman.jpgRoxette;Entertainment;Roxette;ROXETTE;roxette;roxetteicon.jpg;roxette.jpgThe Cardigans;Entertainment;The Cardigans;The Cardigans;the cardigans;thecardigansicon.jpg;thecardigans.jpgGreta Garbo;Entertainment;Greta Garbo;Greta Garbo;greta garbo;getagarboicon.jpg;getagarbo.jpgIngrid Bergman;Entertainment;Ingrid Bergman;Ingrid Bergman;ingrid bergman;ingridbergmanicon.jpg;ingridbergman.jpgPeter Stormare;Entertainment;Peter Stormare;Peter Stormare;peter stormare;peterstormareicon.jpg;peterstormare.jpg;;;;;;Zlatan Ibrahimovic;Sports;Zlatan Ibrahimovic;Zlatan;zlatan ibrahimovic;zlatanicon.jpg;zlatan.jpgHenrik Zetterberg;Sports;Henrik Zetterberg;Henrik Zetterberg;henrik zetterberg;henrikzetterbergicon.jpg;henrikzetterberg.jpgPeter Forsberg;Sports;Peter Forsberg;Peter Forsberg;peter forsberg;foppaicon.jpg;foppa.jpgSven-G_ran Eriksson;Sports;Sven-G_ran Eriksson;Sven-Goran Eriksson;sven goran eriksson;svengoranerikssonicon.jpg;svengoraneriksson.jpgBj_rn Borg;Sports;Bj_rn Borg;Bjorn Borg;bjorn borg;bjornborgicon.jpg;bjornborg.jpgAnnika S_renstam;Sports;Annika S_renstam;Annika Sorenstam;annika sorenstam;annikasorenstamicon.jpg;annikasorenstam.jpgTherese Alshammar;Sports;Therese Alshammar;Therese Alshammar;therese alshammar;theresealshammaricon.jpg;theresealshammar.jpgFredrik Ljungberg;Sports;Fredrik Ljungberg;Fredrik Ljungberg;fredrik ljungberg;fredrikljungbergicon.jpg;fredrikljungberg.jpgPaolo Roberto;Sports;Paolo Roberto;Paolo Roberto;paolo roberto;paolorobertoicon.jpg;paoloroberto.jpg
+Name;Category;Icon;Image;Id1;Id2;Id3
+The Hives;Entertainment;thehivesicon.jpg;thehives.jpg;The Hives;The Hives;the hives
+Stellan SkarsgÔrd;Entertainment;stellanskarsgardicon.jpg;stellanskarsgard.jpg;Stellan SkarsgÔrd;Stellan Skarsgard;stellan skarsgard
+Alexander SkarsgÔrd;Entertainment;alexanderskarsgardicon.jpg;alexanderskarsgard.jpg;Alexander SkarsgÔrd;Alexander Skarsgard;alexander skarsgard
+Noomi Rapace;Entertainment;noomirapaceicon.jpg;noomirapace.jpg;Noomi Rapace;Noomi Rapace;noomi rapace
+ABBA;Entertainment;abbaicon.jpg;abba.jpg;Abba;ABBA;abba
+Malin Åkerman;Entertainment;malinakermanicon.jpg;malinakerman.jpg;Malin Åkerman;Malin Akerman;malin akerman
+Roxette;Entertainment;roxetteicon.jpg;roxette.jpg;Roxette;ROXETTE;roxette
+The Cardigans;Entertainment;thecardigansicon.jpg;thecardigans.jpg;The Cardigans;The Cardigans;the cardigans
+Greta Garbo;Entertainment;getagarboicon.jpg;getagarbo.jpg;Greta Garbo;Greta Garbo;greta garbo
+Ingrid Bergman;Entertainment;ingridbergmanicon.jpg;ingridbergman.jpg;Ingrid Bergman;Ingrid Bergman;ingrid bergman
+Peter Stormare;Entertainment;peterstormareicon.jpg;peterstormare.jpg;Peter Stormare;Peter Stormare;peter stormare
+;;;;;;
+Zlatan Ibrahimovic;Sports;zlatanicon.jpg;zlatan.jpg;Zlatan Ibrahimovic;Zlatan;zlatan ibrahimovic
+Henrik Zetterberg;Sports;henrikzetterbergicon.jpg;henrikzetterberg.jpg;Henrik Zetterberg;Henrik Zetterberg;henrik zetterberg
+Peter Forsberg;Sports;foppaicon.jpg;foppa.jpg;Peter Forsberg;Peter Forsberg;peter forsberg
+Sven-G_ran Eriksson;Sports;svengoranerikssonicon.jpg;svengoraneriksson.jpg;Sven-G_ran Eriksson;Sven-Goran Eriksson;sven goran eriksson
+Bj_rn Borg;Sports;bjornborgicon.jpg;bjornborg.jpg;Bj_rn Borg;Bjorn Borg;bjorn borg
+Annika S_renstam;Sports;annikasorenstamicon.jpg;annikasorenstam.jpg;Annika S_renstam;Annika Sorenstam;annika sorenstam
+Therese Alshammar;Sports;theresealshammaricon.jpg;theresealshammar.jpg;Therese Alshammar;Therese Alshammar;therese alshammar
+Fredrik Ljungberg;Sports;fredrikljungbergicon.jpg;fredrikljungberg.jpg;Fredrik Ljungberg;Fredrik Ljungberg;fredrik ljungberg
+Paolo Roberto;Sports;paolorobertoicon.jpg;paoloroberto.jpg;Paolo Roberto;Paolo Roberto;paolo roberto

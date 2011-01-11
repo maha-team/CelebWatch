@@ -46,6 +46,18 @@ public class Table extends PApplet{
 	    System.out.println("No row named '" + name + "' was found");
 	    return -1;
 	  }
+	  
+	  int getStringRowIndex(String name) {
+		    for (int i = 0; i < rowCount; i++) {
+		    	for (int j = 0; j < 7; j++) {
+		    		if (data[i][j].equals(name)) {
+		    			return i;
+		    		}
+		    	}
+		      }
+		    System.out.println("No row named '" + name + "' was found");
+		    return -1;
+		  }
 
 	  String getRowName(int row) {
 	    return getString(row, 0);
@@ -60,11 +72,11 @@ public class Table extends PApplet{
 	  }
 	  
 	  String getIconName(int row) {
-		    return getString(row, 5);
+		    return getString(row, 2);
 		  }
 	  
 	  String getImageName(int row) {
-		    return getString(row, 6);
+		    return getString(row, 3);
 		  }
 
 	  String getString(int rowIndex, int column) {

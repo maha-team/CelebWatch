@@ -99,17 +99,16 @@ public class MainPageContainer extends JFrame {
 			}
 		}
 		
-		/*/
-		 *Sports button pressed and changes to gray
+		 /*/
+		  * *Sports button pressed and changes to gray
 		 */
-		if (PressedButton == 2) { 
+		 if (PressedButton == 2) { 
 			Entertainment.setIcon(new ImageIcon(MainPageContainer.class.getResource("/images/entertainmentbutton.png")));
 			Politics.setIcon(new ImageIcon(MainPageContainer.class.getResource("/images/politicsbutton.png")));
 			Sports.setIcon(new ImageIcon(MainPageContainer.class.getResource("/images/sportbuttonpressed.png")));
 			
-			/*/
-			 * reads the csv file and imports the images into the sidepanel1
-			 */
+			
+			// * reads the csv file and imports the images into the sidepanel1
 			for( int i = 0; i < t.getRowCount(); i++ ) {
 			    if (t.getRowCat(i).compareTo("Sports") == 0) {
 			    	String celebIcon = "/images/"+ t.getIconName(i);
@@ -131,7 +130,7 @@ public class MainPageContainer extends JFrame {
 		/*/
 		 * reads the file name.csv
 		 */
-		t = new Table("name.csv");
+		t = new Table("names.csv");
 		
 		setTitle("CelebWatch Main Page");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -171,6 +170,7 @@ public class MainPageContainer extends JFrame {
 		celebInfoPanel.setLayout(new GridLayout(1, 0, 0, 0));
 		
 		TweetScrollPane = new JScrollPane();
+		TweetScrollPane.setBorder(null);
 		TweetScrollPane.setBounds(10, 180, 400, 352);
 		contentPane.add(TweetScrollPane);
 				
@@ -273,15 +273,16 @@ public class MainPageContainer extends JFrame {
 		MainCelebwatch.setFont(new Font("Arial", Font.BOLD, 12));
 		MainCelebwatch.setIcon(new ImageIcon(MainPageContainer.class.getResource("/images/bakgrund.jpg")));
 		MainCelebwatch.setHorizontalAlignment(SwingConstants.CENTER);
+
 	}
 		
 	public void showTable (int rowIndex){
+		tweetStream.setText("");
 		celebInfoPanel.removeAll();
 		t.getImageName(rowIndex);
 		t.getRowName(rowIndex);
 	    String celebImage = "/images/"+ t.getImageName(rowIndex);
 	    	JLabel celeb = new JLabel(t.getRowName(rowIndex));
-	    	System.out.println("+++++++++: "+celeb.getText());
 	    	ShowTweet(celeb.getText());
 	    	c.setFind(celeb.getText());
 	    	
@@ -298,8 +299,7 @@ public class MainPageContainer extends JFrame {
 
 
 	public void ShowTweet(String tweet) {
-		tweetStream.append(tweet);
+		tweetStream.append(tweet + "\n\n");
 		
 	}
-	
 }

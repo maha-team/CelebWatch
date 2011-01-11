@@ -50,21 +50,13 @@ public class Main extends JFrame {
 	public void Mupp() {
 		
 		// Create the table (2D array) from our CSV file.
-		  t = new Table( "name.csv" );
+		  t = new Table( "names.csv" );
 		  rows = t.getRowCount(); 
 		  
 		//print the first column in each row from csv-file.
 		  for( int i = 0; i < rows; i++ ) {
-		    //System.out.println( t.getRowName(i) );
 		  }
 		 		   
-		 /* Hämtar kolumn 2 (Category) från rad numret som heter "ABBA" */
-		 //System.out.println(t.getString(t.getRowIndex("ABBA"), 1));
-		 
-		 /* Hämtar kolumn 3 (Id1) från raden som heter "The Hives" */
-		 //System.out.println(t.getString("The Hives", 2));
-		 // c = new Control();
-		 // c.readTweets();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 	}

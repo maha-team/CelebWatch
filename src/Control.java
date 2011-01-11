@@ -61,8 +61,6 @@ private MainPageContainer _mainPageContainer;
 		            }
 	      }
 
-	 
-
 	      @Override /**Method from  Statuslistener not used in this example*/
 
 	      public void onTrackLimitationNotice(int arg0) {
@@ -70,14 +68,12 @@ private MainPageContainer _mainPageContainer;
 	            // TODO Auto-generated method stub     
 	      }
 
-	     
-
 	      /**Checks if tweet is according to our demands*/
 
 	      private boolean checkTweet(String _tweet){
 	    	  //System.out.println(_tweet);
 			  boolean found = false;
-			  t = new Table( "name.csv" );
+			  t = new Table( "names.csv" );
 			  int rIndex = t.getStringRowIndex(_findText);
 			  if (rIndex != -1) {
 			  for (int j = 4; j < 7; j++) {

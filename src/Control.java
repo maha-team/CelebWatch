@@ -19,7 +19,7 @@ private MainPageContainer _mainPageContainer;
 
 	            /* Create the TweetStream reader thread */
 
-	            TwitterStream mTwitterStream = new TwitterStreamFactory(this).getInstance("Ikarros","gwuvm98u");
+	            TwitterStream mTwitterStream = new TwitterStreamFactory(this).getInstance("mahateam","mahateam1");
 
 	            /* Start reading the Twitter Stream */
 

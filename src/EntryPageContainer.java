@@ -24,8 +24,8 @@ public class EntryPageContainer extends JFrame {
 	private static JFrame m_StartFrame = null;
 	private Control _c;
 
-	/**
-	 * Create the frame.
+	/*
+	 * Creates the EntryFrame and buttons and their interaction
 	 */
 	public EntryPageContainer() {
 		setTitle("Welcome to CelebWatch - Sweden");
@@ -37,6 +37,7 @@ public class EntryPageContainer extends JFrame {
 		setResizable(false);
 		contentPane.setLayout(null);
 		
+		/*Entertainment Button*/
 		final JButton Entertainment = new JButton("Entertainment");
 		Entertainment.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -48,6 +49,7 @@ public class EntryPageContainer extends JFrame {
 			}
 		});
 		
+		/*when a button is pressed the icon changes to gray*/		
 		Entertainment.addChangeListener(new ChangeListener() {
 			public void stateChanged(ChangeEvent arg0) {
 				Entertainment.setIcon(new ImageIcon(EntryPageContainer.class.getResource("/images/entertainmentbuttonpressed.png")));
@@ -73,10 +75,15 @@ public class EntryPageContainer extends JFrame {
 		Entertainment.setBounds(250, 280, 112, 40);
 		contentPane.add(Entertainment);
 		
+		/*Politics Button*/
 		final JButton Politics = new JButton("");
-		Politics.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				JFrame MPC = new MainPageContainer();
+		
+		/**Dispabled functionality of Politics button since there are no celebs put in this cathegory**/
+		/*/Politics.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+			
+				 * JFrame MPC = new MainPageContainer();
+				 
 				((MainPageContainer)MPC).setPressedButton(1);
 				MPC.setVisible(true);
 				m_StartFrame = null;
@@ -84,11 +91,12 @@ public class EntryPageContainer extends JFrame {
 			}
 		});
 		
+		
 		Politics.addChangeListener(new ChangeListener() {
 			public void stateChanged(ChangeEvent arg0) {
 				Politics.setIcon(new ImageIcon(EntryPageContainer.class.getResource("/images/politicsbuttonpressed.png")));
 			}
-		});
+		});*/
 		
 		Politics.setIcon(new ImageIcon(EntryPageContainer.class.getResource("/images/politicsbutton.png")));
 		Politics.setBorder(null);
@@ -100,13 +108,14 @@ public class EntryPageContainer extends JFrame {
 		Politics.setHorizontalTextPosition(SwingConstants.RIGHT);
 		Politics.setHorizontalAlignment(SwingConstants.LEADING);
 		Politics.setForeground(Color.WHITE);
-		Politics.setFont(new Font("Arial", Font.BOLD, 12));
+		Politics.setFont(new Font("Arial", Font.PLAIN, 12));
 		Politics.setBorderPainted(false);
 		Politics.setBackground(Color.WHITE);
 		Politics.setAlignmentY(0.0f);
 		Politics.setBounds(360, 320, 110, 40);
 		contentPane.add(Politics);
 		
+		/*SportsButton*/
 		final JButton Sports = new JButton("");
 		Sports.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -118,6 +127,7 @@ public class EntryPageContainer extends JFrame {
 			}
 		});
 		
+		/*when a button is pressed the icon changes to gray*/
 		Sports.addChangeListener(new ChangeListener() {
 			public void stateChanged(ChangeEvent arg0) {
 				Sports.setIcon(new ImageIcon(EntryPageContainer.class.getResource("/images/sportbuttonpressed.png")));
@@ -133,20 +143,21 @@ public class EntryPageContainer extends JFrame {
 		Sports.setMaximumSize(new Dimension(107, 36));
 		Sports.setHorizontalTextPosition(SwingConstants.CENTER);
 		Sports.setForeground(Color.WHITE);
-		Sports.setFont(new Font("Arial", Font.BOLD, 12));
+		Sports.setFont(new Font("Arial", Font.PLAIN, 12));
 		Sports.setBorderPainted(false);
 		Sports.setBackground(Color.WHITE);
 		Sports.setAlignmentY(0.0f);
 		Sports.setBounds(470, 360, 110, 40);
 		contentPane.add(Sports);
 		
-		JLabel lblCelebwatchSweden = new JLabel("");
+		/*Panel for BG image
+		 * */JLabel lblCelebwatchSweden = new JLabel("");
 		lblCelebwatchSweden.setBorder(null);
 		lblCelebwatchSweden.setBackground(Color.WHITE);
-		lblCelebwatchSweden.setIcon(new ImageIcon(EntryPageContainer.class.getResource("/images/firstpage.jpg")));
+		lblCelebwatchSweden.setIcon(new ImageIcon(EntryPageContainer.class.getResource("/images/firstpage1.jpg")));
 		lblCelebwatchSweden.setHorizontalAlignment(SwingConstants.TRAILING);
 		lblCelebwatchSweden.setBounds(0, 0, 680, 550);
 		contentPane.add(lblCelebwatchSweden);
 		
 	}
-}
+		}

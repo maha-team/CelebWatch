@@ -12,6 +12,7 @@ public class MyLabel extends JLabel implements MouseListener {
 	private MainPageContainer MPC;
 	private int Index;
 	
+	/*Creates the buttonfunction for the images on in the right hand sidepanel*/
 	public void setMPC(MainPageContainer parent){
 		MPC = parent;
 	}
@@ -32,26 +33,18 @@ public class MyLabel extends JLabel implements MouseListener {
 	}
 
 	@Override
-	public void mouseEntered(MouseEvent arg0) {
-		// TODO Auto-generated method stub
-		
+	public void mouseEntered(MouseEvent arg0) {	
 	}
 
 	@Override
-	public void mouseExited(MouseEvent arg0) {
-		// TODO Auto-generated method stub
-		
+	public void mouseExited(MouseEvent arg0) {	
 	}
 
 	@Override
-	public void mousePressed(MouseEvent arg0) {
-		// TODO Auto-generated method stub
-		
+	public void mousePressed(MouseEvent arg0) {	
 	}
 
 	@Override
 	public void mouseReleased(MouseEvent arg0) {
-		// TODO Auto-generated method stub
-		
 	}
 }

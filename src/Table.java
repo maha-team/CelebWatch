@@ -27,9 +27,7 @@ public class Table extends PApplet {
 		}
 
 		// resize the 'data' array as necessary
-		data = (String[][]) subset(data, 0, rowCount);
-		
-		//this.printcsv();
+		data = (String[][]) subset(data, 0, rowCount);		
 	}
 
 	int getRowCount() {
@@ -134,7 +132,7 @@ public class Table extends PApplet {
 		data[rowIndex][column] = str(what);
 	}
 
-	/*/ print csv/*/
+	/* print csv*/
 	void printcsv() {
 		for (int i = 0; i < rowCount; i++)
 			System.out.println(data[i][0]);

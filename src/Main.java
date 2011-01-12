@@ -14,21 +14,21 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 
 
 public class Main extends JFrame {
+	
 	public Main() {
 	}
 
 	private JPanel contentPane;
-	//private Control c;
 	Table t; //csv
 	int rows; //csv
 	
 		
-	/**
-	 * Launch the application.
+	/*
+	 * Launches the application
 	 */
 	public static void main(final String[] args) {
-		Main asd = new Main();
-		asd.Mupp();
+		Main cont = new Main();
+		cont.CSV();
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -44,13 +44,13 @@ public class Main extends JFrame {
 		
 	}
 
-	/**
-	 * Create the frame.
+	/*
+	 * Creates the frame.
 	 */
-	public void Mupp() {
+	public void CSV() {
 		
 		// Create the table (2D array) from our CSV file.
-		  t = new Table( "names.csv" );
+		  t = new Table( "name.csv" );
 		  rows = t.getRowCount(); 
 		  
 		//print the first column in each row from csv-file.

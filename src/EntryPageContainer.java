@@ -39,6 +39,7 @@ public class EntryPageContainer extends JFrame {
 		
 		/*Entertainment Button*/
 		final JButton Entertainment = new JButton("Entertainment");
+		Entertainment.setVerticalAlignment(SwingConstants.TOP);
 		Entertainment.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 					JFrame MPC = new MainPageContainer();
@@ -72,11 +73,12 @@ public class EntryPageContainer extends JFrame {
 		Entertainment.setForeground(Color.WHITE);
 		Entertainment.setBackground(Color.WHITE);
 		Entertainment.setFont(new Font("Arial", Font.BOLD, 12));
-		Entertainment.setBounds(250, 280, 112, 40);
+		Entertainment.setBounds(153, 254, 112, 40);
 		contentPane.add(Entertainment);
 		
 		/*Politics Button*/
 		final JButton Politics = new JButton("");
+		Politics.setVerticalAlignment(SwingConstants.TOP);
 		
 		/**Dispabled functionality of Politics button since there are no celebs put in this cathegory**/
 		/*/Politics.addActionListener(new ActionListener() {
@@ -112,11 +114,12 @@ public class EntryPageContainer extends JFrame {
 		Politics.setBorderPainted(false);
 		Politics.setBackground(Color.WHITE);
 		Politics.setAlignmentY(0.0f);
-		Politics.setBounds(360, 320, 110, 40);
+		Politics.setBounds(289, 254, 110, 40);
 		contentPane.add(Politics);
 		
 		/*SportsButton*/
 		final JButton Sports = new JButton("");
+		Sports.setVerticalAlignment(SwingConstants.TOP);
 		Sports.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				JFrame MPC = new MainPageContainer();
@@ -147,14 +150,14 @@ public class EntryPageContainer extends JFrame {
 		Sports.setBorderPainted(false);
 		Sports.setBackground(Color.WHITE);
 		Sports.setAlignmentY(0.0f);
-		Sports.setBounds(470, 360, 110, 40);
+		Sports.setBounds(409, 255, 110, 40);
 		contentPane.add(Sports);
 		
 		/*Panel for BG image
 		 * */JLabel lblCelebwatchSweden = new JLabel("");
 		lblCelebwatchSweden.setBorder(null);
 		lblCelebwatchSweden.setBackground(Color.WHITE);
-		lblCelebwatchSweden.setIcon(new ImageIcon(EntryPageContainer.class.getResource("/images/firstpage1.jpg")));
+		lblCelebwatchSweden.setIcon(new ImageIcon(EntryPageContainer.class.getResource("/images/firstpage2.jpg")));
 		lblCelebwatchSweden.setHorizontalAlignment(SwingConstants.TRAILING);
 		lblCelebwatchSweden.setBounds(0, 0, 680, 550);
 		contentPane.add(lblCelebwatchSweden);

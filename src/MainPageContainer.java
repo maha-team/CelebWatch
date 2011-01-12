@@ -28,6 +28,7 @@ import com.jgoodies.forms.layout.FormLayout;
 import com.jgoodies.forms.layout.ColumnSpec;
 import com.jgoodies.forms.layout.RowSpec;
 import net.miginfocom.swing.MigLayout;
+import javax.swing.Box;
 
 
 public class MainPageContainer extends JFrame {
@@ -37,6 +38,7 @@ public class MainPageContainer extends JFrame {
 	JButton Entertainment;
 	JButton Politics;
 	JButton Sports;
+	JButton CelebWatch;
 	private int PressedButton = 0;
 	private JPanel sidepanel1;
 	private Table t;
@@ -161,7 +163,7 @@ public class MainPageContainer extends JFrame {
 		celebInfoPanel.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
 		celebInfoPanel.setBackground(Color.WHITE);
 		celebInfoPanel.setForeground(Color.WHITE);
-		celebInfoPanel.setBounds(10, 65, 400, 127);
+		celebInfoPanel.setBounds(10, 61, 400, 127);
 		contentPane.add(celebInfoPanel);
 		celebInfoPanel.setLayout(new GridLayout(1, 0, 0, 0));
 		
@@ -205,7 +207,7 @@ public class MainPageContainer extends JFrame {
 		Entertainment.setBorderPainted(false);
 		Entertainment.setBackground(Color.WHITE);
 		Entertainment.setAlignmentY(0.0f);
-		Entertainment.setBounds(10, 10, 110, 40);
+		Entertainment.setBounds(314, 7, 110, 40);
 		contentPane.add(Entertainment);
 		
 		/* Politics button */
@@ -235,7 +237,7 @@ public class MainPageContainer extends JFrame {
 		Politics.setBorderPainted(false);
 		Politics.setBackground(Color.WHITE);
 		Politics.setAlignmentY(0.0f);
-		Politics.setBounds(120, 10, 110, 40);
+		Politics.setBounds(434, 7, 110, 40);
 		contentPane.add(Politics);
 		
 		/*Sportsbutton*/
@@ -259,12 +261,19 @@ public class MainPageContainer extends JFrame {
 		Sports.setBorderPainted(false);
 		Sports.setBackground(Color.WHITE);
 		Sports.setAlignmentY(0.0f);
-		Sports.setBounds(230, 10, 110, 40);
+		Sports.setBounds(554, 7, 110, 40);
 		contentPane.add(Sports);
 		
 		/*MainWindow layout*/
+		
+		CelebWatch = new JButton("");
+		CelebWatch.setBorderPainted(false);
+		CelebWatch.setForeground(Color.WHITE);
+		CelebWatch.setIcon(new ImageIcon(MainPageContainer.class.getResource("/images/text.jpg")));
+		CelebWatch.setBounds(10, 5, 260, 40);
+		contentPane.add(CelebWatch);
 		JLabel MainCelebwatch = new JLabel("");
-		MainCelebwatch.setBounds(0, 0, 680, 550);
+		MainCelebwatch.setBounds(0, 0, 674, 544);
 		contentPane.add(MainCelebwatch);
 		MainCelebwatch.setForeground(Color.WHITE);
 		MainCelebwatch.setFont(new Font("Arial", Font.PLAIN, 12));
